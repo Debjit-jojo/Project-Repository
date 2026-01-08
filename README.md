@@ -1,4 +1,5 @@
 # AMAZECART
+It is a shopping website interface:
 <!DOCTYPE html>
 <html lang="en">
 <head>
