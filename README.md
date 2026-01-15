@@ -1,5 +1,5 @@
 # AMAZECART
-This is a code for making the User Interface of a shopping app where a user can choose the item and add to cart the item.
+**This is a code for making the User Interface of a shopping app where a user can choose the item and add to cart the item.**
 <!DOCTYPE html>
 <html lang="en">
 <head>
