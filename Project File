@@ -14,11 +14,11 @@
         color:white;
         display:flex;
         justify-content:space-between;
-        align-items:center:
+        align-items:center;
         padding:15px 30px;
         flex-wrap:wrap;
     }
-    header h1 { font-size:28px; font-weight:700; }
+    header h1 { font-size:28px;font-weight:700; }
     nav a {
         color:white; text-decoration:none; margin:0 10px; font-weight:600;
     }
