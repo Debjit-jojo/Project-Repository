@@ -1,1 +1,101 @@
+import java.util.Scanner;
 
+public class CurrencyConverter {
+
+    public static double getRate(String from, String to) {
+
+        from = from.toUpperCase();
+        to = to.toUpperCase();
+
+        // USD base
+        if (from.equals("USD") && to.equals("INR")) return 83.0;
+        if (from.equals("USD") && to.equals("EUR")) return 0.92;
+        if (from.equals("USD") && to.equals("GBP")) return 0.78;
+        if (from.equals("USD") && to.equals("JPY")) return 150.0;
+        if (from.equals("USD") && to.equals("AUD")) return 1.5;
+
+        // INR base
+        if (from.equals("INR") && to.equals("USD")) return 1/83.0;
+        if (from.equals("INR") && to.equals("EUR")) return 0.011;
+        if (from.equals("INR") && to.equals("GBP")) return 0.0094;
+        if (from.equals("INR") && to.equals("JPY")) return 1.8;
+        if (from.equals("INR") && to.equals("AUD")) return 0.018;
+
+        // EUR base
+        if (from.equals("EUR") && to.equals("USD")) return 1.09;
+        if (from.equals("EUR") && to.equals("INR")) return 90.0;
+        if (from.equals("EUR") && to.equals("GBP")) return 0.85;
+        if (from.equals("EUR") && to.equals("JPY")) return 160.0;
+        if (from.equals("EUR") && to.equals("AUD")) return 1.6;
+
+        // GBP base
+        if (from.equals("GBP") && to.equals("USD")) return 1.28;
+        if (from.equals("GBP") && to.equals("INR")) return 105.0;
+        if (from.equals("GBP") && to.equals("EUR")) return 1.17;
+        if (from.equals("GBP") && to.equals("JPY")) return 185.0;
+        if (from.equals("GBP") && to.equals("AUD")) return 1.9;
+
+        // JPY base
+        if (from.equals("JPY") && to.equals("USD")) return 1/150.0;
+        if (from.equals("JPY") && to.equals("INR")) return 0.55;
+        if (from.equals("JPY") && to.equals("EUR")) return 0.0063;
+        if (from.equals("JPY") && to.equals("GBP")) return 0.0054;
+        if (from.equals("JPY") && to.equals("AUD")) return 0.01;
+
+        // AUD base
+        if (from.equals("AUD") && to.equals("USD")) return 0.67;
+        if (from.equals("AUD") && to.equals("INR")) return 55.0;
+        if (from.equals("AUD") && to.equals("EUR")) return 0.63;
+        if (from.equals("AUD") && to.equals("GBP")) return 0.52;
+        if (from.equals("AUD") && to.equals("JPY")) return 100.0;
+
+        if (from.equals(to)) return 1.0;
+
+        return -1;
+    }
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("=======================================");
+        System.out.println("      💱 CURRENCY CONVERTER APP 💱      ");
+        System.out.println("=======================================");
+
+        System.out.println("\nAvailable Currencies:");
+        System.out.println("USD - US Dollar");
+        System.out.println("INR - Indian Rupee");
+        System.out.println("EUR - Euro");
+        System.out.println("GBP - British Pound");
+        System.out.println("JPY - Japanese Yen");
+        System.out.println("AUD - Australian Dollar");
+
+        System.out.println("---------------------------------------");
+
+        System.out.print("Enter Amount: ");
+        double amount = sc.nextDouble();
+
+        System.out.print("From Currency: ");
+        String from = sc.next();
+
+        System.out.print("To Currency: ");
+        String to = sc.next();
+
+        double rate = getRate(from, to);
+
+        System.out.println("---------------------------------------");
+
+        if (rate == -1) {
+            System.out.println("❌ Invalid currency entered!");
+        } else {
+            double result = amount * rate;
+            System.out.printf("✅ Converted Amount: %.2f %s\n", result, to.toUpperCase());
+        }
+
+        System.out.println("=======================================");
+        System.out.println("      Thank You for Using App 😊       ");
+        System.out.println("=======================================");
+
+        sc.close();
+    }
+}
