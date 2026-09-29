@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class CurrencyConverter {
 
-    public static double getRate(String from, String to) {
+    public static double getRate(String from, STring to) {
 
         from = from.toUpperCase();
         to = to.toUpperCase();
